@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftID</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form>
+        <div>
+          <label for="PCF_value">Enter String from PCF ( LITTLE ENDIAN ) </label>
+          <input
+            type="text"
+            id="PCF_value"
+            name="PCF_value1"
+            size="100"
+            placeholder="Lower case, all one word" />
+        </div>
+
+        <div>
+          <button id="submitBtn"  type="button" >Decode</button>
+        </div>
+    </form>
+
+    <form>
+        <label for="options">Item1</label>
+        
+        <select id="Item1Value" name="options">
+            <option value="END_OF_LIST">END_OF_LIST</option>
+            <option value="BLANK_ITEM">BLANK_ITEM</option>
+            <option value="APP_VER">APP_VER</option>
+            <option value="BL_VER">BL_VER</option>
+            <option value="HW_VER">HW_VER</option>
+            <option value="SW_VAR">SW_VAR</option>
+            <option value="HW_VAR">HW_VAR</option>
+            <option value="FW_CRC">FW_CRC</option>
+            <option value="ALGO_CRC">ALGO_CRC</option>
+            <option value="CFG_CRC">CFG_CRC</option>
+            <option value="COMB_CRC">COMB_CRC</option>
+            <option value="CONCAT_CRC">CONCAT_CRC</option>
+            <option value="PARALLEL_CRC">PARALLEL_CRC</option>
+            <option value="ACTIVECFG_CRC">ACTIVECFG_CRC</option>
+            <option value="BASECFG_CRC">BASECFG_CRC</option>
+            <option value="SECAPP_CRC">SECAPP_CRC</option>
+            <option value="MANU_DATE">MANU_DATE</option>
+            <option value="BL_CRC">BL_CRC</option>
+            <option value="DLID_CRC">DLID_CRC</option>
+            <option value="ECU_PARTNUM">ECU_PARTNUM</option>
+            <option value="CUSTOMER_PARTNUM">CUSTOMER_PARTNUM</option>
+            <option value="ECU_SERIAL_NUM">ECU_SERIAL_NUM</option>
+            <option value="TYPE">TYPE</option>
+            <option value="MANUFACTURER">MANUFACTURER</option>
+            <option value="CUSTOMER_MODEL">CUSTOMER_MODEL</option>
+            <option value="CUSTOMER_HW_PARTNUM">CUSTOMER_HW_PARTNUM</option>
+            <option value="CUSTOMER_SW_PARTNUM">CUSTOMER_SW_PARTNUM</option>
+            <option value="SW_ASSY_PART_NUM">SW_ASSY_PART_NUM</option>
+            <option value="CUSTOMER_SER_NUM">CUSTOMER_SER_NUM</option>
+            <option value="CUSTOM_STR1">CUSTOM_STR1</option>
+            <option value="CUSTOM_STR2">CUSTOM_STR2</option>
+            <option value="CUSTOM_STR3">CUSTOM_STR3</option>
+            <option value="CUSTOM_STR4">CUSTOM_STR4</option>
+            <option value="CUSTOM_STR5">CUSTOM_STR5</option>
+            <option value="CUSTOM_STR6">CUSTOM_STR6</option>
+            <option value="SW_ASSY_DATE">SW_ASSY_DATE</option>
+        </select>
+
+        <select id="Item1Delimeter" name="options">
+           
+            <option value="STANDARD">STANDARD</option>
+            <option value="CUSTOM">CUSTOM</option>
+            <option value="NONE">NONE</option>
+        </select>
+
+        <label for="options">Item2</label>
+        
+        <select id="Item2Value" name="options">
+            <option value="END_OF_LIST">END_OF_LIST</option>
+            <option value="BLANK_ITEM">BLANK_ITEM</option>
+            <option value="APP_VER">APP_VER</option>
+            <option value="BL_VER">BL_VER</option>
+            <option value="HW_VER">HW_VER</option>
+            <option value="SW_VAR">SW_VAR</option>
+            <option value="HW_VAR">HW_VAR</option>
+            <option value="FW_CRC">FW_CRC</option>
+            <option value="ALGO_CRC">ALGO_CRC</option>
+            <option value="CFG_CRC">CFG_CRC</option>
+            <option value="COMB_CRC">COMB_CRC</option>
+            <option value="CONCAT_CRC">CONCAT_CRC</option>
+            <option value="PARALLEL_CRC">PARALLEL_CRC</option>
+            <option value="ACTIVECFG_CRC">ACTIVECFG_CRC</option>
+            <option value="BASECFG_CRC">BASECFG_CRC</option>
+            <option value="SECAPP_CRC">SECAPP_CRC</option>
+            <option value="MANU_DATE">MANU_DATE</option>
+            <option value="BL_CRC">BL_CRC</option>
+            <option value="DLID_CRC">DLID_CRC</option>
+            <option value="ECU_PARTNUM">ECU_PARTNUM</option>
+            <option value="CUSTOMER_PARTNUM">CUSTOMER_PARTNUM</option>
+            <option value="ECU_SERIAL_NUM">ECU_SERIAL_NUM</option>
+            <option value="TYPE">TYPE</option>
+            <option value="MANUFACTURER">MANUFACTURER</option>
+            <option value="CUSTOMER_MODEL">CUSTOMER_MODEL</option>
+            <option value="CUSTOMER_HW_PARTNUM">CUSTOMER_HW_PARTNUM</option>
+            <option value="CUSTOMER_SW_PARTNUM">CUSTOMER_SW_PARTNUM</option>
+            <option value="SW_ASSY_PART_NUM">SW_ASSY_PART_NUM</option>
+            <option value="CUSTOMER_SER_NUM">CUSTOMER_SER_NUM</option>
+            <option value="CUSTOM_STR1">CUSTOM_STR1</option>
+            <option value="CUSTOM_STR2">CUSTOM_STR2</option>
+            <option value="CUSTOM_STR3">CUSTOM_STR3</option>
+            <option value="CUSTOM_STR4">CUSTOM_STR4</option>
+            <option value="CUSTOM_STR5">CUSTOM_STR5</option>
+            <option value="CUSTOM_STR6">CUSTOM_STR6</option>
+            <option value="SW_ASSY_DATE">SW_ASSY_DATE</option>
+        </select>
+
+        <select id="Item2Delimeter" name="options">
+        
+            <option value="STANDARD">STANDARD</option>
+            <option value="CUSTOM">CUSTOM</option>
+            <option value="NONE">NONE</option>
+        </select>
+
+
+        <label for="options">Item3</label>
+        
+        <select id="Item3Value" name="options">
+            <option value="END_OF_LIST">END_OF_LIST</option>
+            <option value="BLANK_ITEM">BLANK_ITEM</option>
+            <option value="APP_VER">APP_VER</option>
+            <option value="BL_VER">BL_VER</option>
+            <option value="HW_VER">HW_VER</option>
+            <option value="SW_VAR">SW_VAR</option>
+            <option value="HW_VAR">HW_VAR</option>
+            <option value="FW_CRC">FW_CRC</option>
+            <option value="ALGO_CRC">ALGO_CRC</option>
+            <option value="CFG_CRC">CFG_CRC</option>
+            <option value="COMB_CRC">COMB_CRC</option>
+            <option value="CONCAT_CRC">CONCAT_CRC</option>
+            <option value="PARALLEL_CRC">PARALLEL_CRC</option>
+            <option value="ACTIVECFG_CRC">ACTIVECFG_CRC</option>
+            <option value="BASECFG_CRC">BASECFG_CRC</option>
+            <option value="SECAPP_CRC">SECAPP_CRC</option>
+            <option value="MANU_DATE">MANU_DATE</option>
+            <option value="BL_CRC">BL_CRC</option>
+            <option value="DLID_CRC">DLID_CRC</option>
+            <option value="ECU_PARTNUM">ECU_PARTNUM</option>
+            <option value="CUSTOMER_PARTNUM">CUSTOMER_PARTNUM</option>
+            <option value="ECU_SERIAL_NUM">ECU_SERIAL_NUM</option>
+            <option value="TYPE">TYPE</option>
+            <option value="MANUFACTURER">MANUFACTURER</option>
+            <option value="CUSTOMER_MODEL">CUSTOMER_MODEL</option>
+            <option value="CUSTOMER_HW_PARTNUM">CUSTOMER_HW_PARTNUM</option>
+            <option value="CUSTOMER_SW_PARTNUM">CUSTOMER_SW_PARTNUM</option>
+            <option value="SW_ASSY_PART_NUM">SW_ASSY_PART_NUM</option>
+            <option value="CUSTOMER_SER_NUM">CUSTOMER_SER_NUM</option>
+            <option value="CUSTOM_STR1">CUSTOM_STR1</option>
+            <option value="CUSTOM_STR2">CUSTOM_STR2</option>
+            <option value="CUSTOM_STR3">CUSTOM_STR3</option>
+            <option value="CUSTOM_STR4">CUSTOM_STR4</option>
+            <option value="CUSTOM_STR5">CUSTOM_STR5</option>
+            <option value="CUSTOM_STR6">CUSTOM_STR6</option>
+            <option value="SW_ASSY_DATE">SW_ASSY_DATE</option>
+        </select>
+
+        <select id="Item3Delimeter" name="options">
+        
+            <option value="STANDARD">STANDARD</option>
+            <option value="CUSTOM">CUSTOM</option>
+            <option value="NONE">NONE</option>
+        </select>
+
+        <label for="options">Item4</label>
+        
+        <select id="Item4Value" name="options">
+            <option value="END_OF_LIST">END_OF_LIST</option>
+            <option value="BLANK_ITEM">BLANK_ITEM</option>
+            <option value="APP_VER">APP_VER</option>
+            <option value="BL_VER">BL_VER</option>
+            <option value="HW_VER">HW_VER</option>
+            <option value="SW_VAR">SW_VAR</option>
+            <option value="HW_VAR">HW_VAR</option>
+            <option value="FW_CRC">FW_CRC</option>
+            <option value="ALGO_CRC">ALGO_CRC</option>
+            <option value="CFG_CRC">CFG_CRC</option>
+            <option value="COMB_CRC">COMB_CRC</option>
+            <option value="CONCAT_CRC">CONCAT_CRC</option>
+            <option value="PARALLEL_CRC">PARALLEL_CRC</option>
+            <option value="ACTIVECFG_CRC">ACTIVECFG_CRC</option>
+            <option value="BASECFG_CRC">BASECFG_CRC</option>
+            <option value="SECAPP_CRC">SECAPP_CRC</option>
+            <option value="MANU_DATE">MANU_DATE</option>
+            <option value="BL_CRC">BL_CRC</option>
+            <option value="DLID_CRC">DLID_CRC</option>
+            <option value="ECU_PARTNUM">ECU_PARTNUM</option>
+            <option value="CUSTOMER_PARTNUM">CUSTOMER_PARTNUM</option>
+            <option value="ECU_SERIAL_NUM">ECU_SERIAL_NUM</option>
+            <option value="TYPE">TYPE</option>
+            <option value="MANUFACTURER">MANUFACTURER</option>
+            <option value="CUSTOMER_MODEL">CUSTOMER_MODEL</option>
+            <option value="CUSTOMER_HW_PARTNUM">CUSTOMER_HW_PARTNUM</option>
+            <option value="CUSTOMER_SW_PARTNUM">CUSTOMER_SW_PARTNUM</option>
+            <option value="SW_ASSY_PART_NUM">SW_ASSY_PART_NUM</option>
+            <option value="CUSTOMER_SER_NUM">CUSTOMER_SER_NUM</option>
+            <option value="CUSTOM_STR1">CUSTOM_STR1</option>
+            <option value="CUSTOM_STR2">CUSTOM_STR2</option>
+            <option value="CUSTOM_STR3">CUSTOM_STR3</option>
+            <option value="CUSTOM_STR4">CUSTOM_STR4</option>
+            <option value="CUSTOM_STR5">CUSTOM_STR5</option>
+            <option value="CUSTOM_STR6">CUSTOM_STR6</option>
+            <option value="SW_ASSY_DATE">SW_ASSY_DATE</option>
+        </select>
+
+        <select id="Item4Delimeter" name="options">
+           
+            <option value="STANDARD">STANDARD</option>
+            <option value="CUSTOM">CUSTOM</option>
+            <option value="NONE">NONE</option>
+        </select>
+        <label for="options">Item5</label>
+        
+        <select id="Item5Value" name="options">
+            <option value="END_OF_LIST">END_OF_LIST</option>
+            <option value="BLANK_ITEM">BLANK_ITEM</option>
+            <option value="APP_VER">APP_VER</option>
+            <option value="BL_VER">BL_VER</option>
+            <option value="HW_VER">HW_VER</option>
+            <option value="SW_VAR">SW_VAR</option>
+            <option value="HW_VAR">HW_VAR</option>
+            <option value="FW_CRC">FW_CRC</option>
+            <option value="ALGO_CRC">ALGO_CRC</option>
+            <option value="CFG_CRC">CFG_CRC</option>
+            <option value="COMB_CRC">COMB_CRC</option>
+            <option value="CONCAT_CRC">CONCAT_CRC</option>
+            <option value="PARALLEL_CRC">PARALLEL_CRC</option>
+            <option value="ACTIVECFG_CRC">ACTIVECFG_CRC</option>
+            <option value="BASECFG_CRC">BASECFG_CRC</option>
+            <option value="SECAPP_CRC">SECAPP_CRC</option>
+            <option value="MANU_DATE">MANU_DATE</option>
+            <option value="BL_CRC">BL_CRC</option>
+            <option value="DLID_CRC">DLID_CRC</option>
+            <option value="ECU_PARTNUM">ECU_PARTNUM</option>
+            <option value="CUSTOMER_PARTNUM">CUSTOMER_PARTNUM</option>
+            <option value="ECU_SERIAL_NUM">ECU_SERIAL_NUM</option>
+            <option value="TYPE">TYPE</option>
+            <option value="MANUFACTURER">MANUFACTURER</option>
+            <option value="CUSTOMER_MODEL">CUSTOMER_MODEL</option>
+            <option value="CUSTOMER_HW_PARTNUM">CUSTOMER_HW_PARTNUM</option>
+            <option value="CUSTOMER_SW_PARTNUM">CUSTOMER_SW_PARTNUM</option>
+            <option value="SW_ASSY_PART_NUM">SW_ASSY_PART_NUM</option>
+            <option value="CUSTOMER_SER_NUM">CUSTOMER_SER_NUM</option>
+            <option value="CUSTOM_STR1">CUSTOM_STR1</option>
+            <option value="CUSTOM_STR2">CUSTOM_STR2</option>
+            <option value="CUSTOM_STR3">CUSTOM_STR3</option>
+            <option value="CUSTOM_STR4">CUSTOM_STR4</option>
+            <option value="CUSTOM_STR5">CUSTOM_STR5</option>
+            <option value="CUSTOM_STR6">CUSTOM_STR6</option>
+            <option value="SW_ASSY_DATE">SW_ASSY_DATE</option>
+        </select>
+
+        <select id="Item5Delimeter" name="options">
+            <option value="STANDARD">STANDARD</option>
+            <option value="CUSTOM">CUSTOM</option>
+            <option value="NONE">NONE</option>
+        </select>
+
+        <label for="options">Item6</label>
+        
+        <select id="Item6Value" name="options">
+            <option value="END_OF_LIST">END_OF_LIST</option>
+            <option value="BLANK_ITEM">BLANK_ITEM</option>
+            <option value="APP_VER">APP_VER</option>
+            <option value="BL_VER">BL_VER</option>
+            <option value="HW_VER">HW_VER</option>
+            <option value="SW_VAR">SW_VAR</option>
+            <option value="HW_VAR">HW_VAR</option>
+            <option value="FW_CRC">FW_CRC</option>
+            <option value="ALGO_CRC">ALGO_CRC</option>
+            <option value="CFG_CRC">CFG_CRC</option>
+            <option value="COMB_CRC">COMB_CRC</option>
+            <option value="CONCAT_CRC">CONCAT_CRC</option>
+            <option value="PARALLEL_CRC">PARALLEL_CRC</option>
+            <option value="ACTIVECFG_CRC">ACTIVECFG_CRC</option>
+            <option value="BASECFG_CRC">BASECFG_CRC</option>
+            <option value="SECAPP_CRC">SECAPP_CRC</option>
+            <option value="MANU_DATE">MANU_DATE</option>
+            <option value="BL_CRC">BL_CRC</option>
+            <option value="DLID_CRC">DLID_CRC</option>
+            <option value="ECU_PARTNUM">ECU_PARTNUM</option>
+            <option value="CUSTOMER_PARTNUM">CUSTOMER_PARTNUM</option>
+            <option value="ECU_SERIAL_NUM">ECU_SERIAL_NUM</option>
+            <option value="TYPE">TYPE</option>
+            <option value="MANUFACTURER">MANUFACTURER</option>
+            <option value="CUSTOMER_MODEL">CUSTOMER_MODEL</option>
+            <option value="CUSTOMER_HW_PARTNUM">CUSTOMER_HW_PARTNUM</option>
+            <option value="CUSTOMER_SW_PARTNUM">CUSTOMER_SW_PARTNUM</option>
+            <option value="SW_ASSY_PART_NUM">SW_ASSY_PART_NUM</option>
+            <option value="CUSTOMER_SER_NUM">CUSTOMER_SER_NUM</option>
+            <option value="CUSTOM_STR1">CUSTOM_STR1</option>
+            <option value="CUSTOM_STR2">CUSTOM_STR2</option>
+            <option value="CUSTOM_STR3">CUSTOM_STR3</option>
+            <option value="CUSTOM_STR4">CUSTOM_STR4</option>
+            <option value="CUSTOM_STR5">CUSTOM_STR5</option>
+            <option value="CUSTOM_STR6">CUSTOM_STR6</option>
+            <option value="SW_ASSY_DATE">SW_ASSY_DATE</option>
+        </select>
+
+        <select id="Item6Delimeter" name="options">
+            <option value="STANDARD">STANDARD</option>
+            <option value="CUSTOM">CUSTOM</option>
+            <option value="NONE">NONE</option>
+        </select>
+        <div>
+            <button id="generateStr"  type="button" >Generate </button>
+        </div>
+    </form>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
